@@ -9,9 +9,7 @@ print("YOU CHOSE", user_choice)
 
 # VALIDATE INPUTS
 
-if user_choice in ["rock", "paper", "scissors"]: # Make a list
-    print("VALID")
-else:
+if user_choice not in ["rock", "paper", "scissors"]: # Make a list
     print("INVALID SELECTION, PLEASE TRY AGAIN...")
     exit()
 
@@ -19,6 +17,7 @@ else:
 # GENERATE COMPUTER SELECTION
 
 print("GENERATING...")
+
 
 # DETERMINE THE WINNER
 
