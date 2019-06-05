@@ -9,7 +9,16 @@ print("YOU CHOSE", user_choice)
 
 # VALIDATE INPUTS
 
+if user_choice in ["rock", "paper", "scissors"]: # Make a list
+    print("VALID")
+else:
+    print("INVALID SELECTION, PLEASE TRY AGAIN...")
+    exit()
+
+
 # GENERATE COMPUTER SELECTION
+
+print("GENERATING...")
 
 # DETERMINE THE WINNER
 
