@@ -2,6 +2,13 @@
 
 import random
 
+def my_message():
+    return "Hello"
+
+# only if this script is 
+if __name__ == if __name__ == "__main__":
+    pass
+
 print("Rock, Paper, Scissors, Shoot!") # this is also a comment
 
 # CAPTURE INPUTS
