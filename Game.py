@@ -21,38 +21,48 @@ if user_choice not in options:
 
 # GENERATE COMPUTER SELECTION
 
-computer_choice = random.choice(["rock", "paper", "scissors"])
+computer_choice = random.choice(options)
 
 print("--------------")
 print("GENERATING...")
 print("COMPUTER CHOICE:", computer_choice)
 
 # DETERMINE THE WINNER
-
-if user_choice == computer_choice:
-    print("TIE")
-
-elif user_choice == "rock" and computer_choice == "paper":
-    print("PAPER")
-elif user_choice == "rock" and computer_choice == "scissors":
-    print("ROCK")
-
-elif user_choice == "paper" and computer_choice == "rock":
-    print("PAPER")
-elif user_choice == "paper" and computer_choice == "scissors":
-    print("SCISSORS")
-
-
-elif user_choice == "scissors" and computer_choice == "paper":
-    print("SCISSORS")   
-elif user_choice == "scissors" and computer_choice == "rock":
-    print("ROCK")
-    
 #
-# rock beats scissor
+# rock beats scissors
 # paper beats rock
 # scissors beats paper
-# same selection is a tie
-# 
+# same selections is a tie
+#
+# first attribute represents the user, second represents the computer
+winners = {
+    "rock":{
+        "rock": None,
+        "paper": "paper",
+        "scissors": "rock",
+    },
+    "paper":{
+        "rock": "paper",
+        "paper": None,
+        "scissors": "scissors",
+    },
+    "scissors":{
+        "rock": "rock",
+        "paper": "scissors",
+        "scissors": None,
+    },
+}
+
+winning_choice = winners[user_choice][computer_choice]
 
 # DISPLAY FINAL OUTPUTS / OUTCOMES
+
+if winning_choice:
+    if winning_choice == user_choice:
+        print("YOU WON")
+    elif winning_choice == computer_choice:
+        print("YOU LOST")
+else:
+    print("TIE")
+
+print("Thanks for playing. Please play again!")
